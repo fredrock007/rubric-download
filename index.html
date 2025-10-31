@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Transactional Writing Assessment Rubric</title>
+<title>Transactional Text Rubric</title>
 <style>
   :root{
     --green:#1f7a3b;
@@ -15,15 +15,15 @@
   .btn{border:none;background:#1f7a3b;color:#fff;font-weight:bold;padding:0.6rem 1.2rem;border-radius:8px;cursor:pointer;}
   .btn:hover{opacity:0.9;}
   .spread{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;padding:22px;}
-  .page{display:grid;grid-template-columns:26mm 1fr;width:210mm;min-height:297mm;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
-  .sidebar{background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;}
-  .sidebar-inner{text-align:center;transform:none;}
-  .sidebar h1{font-size:15px;line-height:1.4;margin:0;font-weight:800;}
-  .sidebar .annex{font-size:11px;margin-bottom:4px;}
+  .page{display:grid;grid-template-columns:28mm 1fr;width:210mm;min-height:297mm;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.15);overflow:hidden;}
+  .sidebar{background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:10mm 3mm;}
+  .sidebar h1{font-size:17px;line-height:1.2;margin:0 0 6px 0;font-weight:800;white-space:nowrap;}
+  .sidebar .annex{font-size:12px;}
   .content{padding:12mm;}
+  .main-title{text-align:center;font-size:22px;font-weight:800;margin-bottom:10px;}
   .heading{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px;}
   .heading h2{font-size:17px;margin:0;}
-  table{width:100%;border-collapse:separate;border-spacing:0 4px;font-size:12px;line-height:1.4;}
+  table{width:100%;border-collapse:separate;border-spacing:0 5px;font-size:12px;line-height:1.5;}
   th,td{border:1px solid var(--grid);padding:8px 10px;vertical-align:top;word-wrap:break-word;}
   th{background:var(--header);}
   .footer-total{margin-top:10px;font-weight:bold;}
@@ -37,14 +37,15 @@
 </div>
 <div class="spread" id="rubric">
   <section class="page">
-    <aside class="sidebar"><div class="sidebar-inner"><div class="annex">Annexure B</div><h1>Transactional Writing Assessment Rubric</h1></div></aside>
+    <aside class="sidebar"><div class="annex">Annexure B</div><h1>Transactional Writing Assessment Rubric</h1></aside>
     <div class="content">
+      <div class="main-title">Transactional Text Rubric</div>
       <div class="heading"><h2>CRITERIA A: CONTENT, PLANNING & FORMAT</h2><div>15 MARKS</div></div>
       <table>
         <thead><tr><th>Level</th><th>Marks</th><th>Descriptor</th></tr></thead>
         <tbody>
           <tr><td>Outstanding</td><td>13–15</td><td>Outstanding response. Demonstrates insight, maturity, and creativity. Fully developed and coherent ideas. Excellent organization and structure. Excellent understanding and control of format. Appropriate style and tone maintained throughout. Purpose clearly achieved.</td></tr>
-          <tr><td>Meritorious</td><td>10–12</td><td>Very good response. Clear ideas with good development and structure. Well‑organized and coherent. Format fully correct. Tone and style appropriate to purpose. Minor inaccuracies only.</td></tr>
+          <tr><td>Meritorious</td><td>10–12</td><td>Very good response. Clear ideas with good development and structure. Well-organized and coherent. Format fully correct. Tone and style appropriate to purpose. Minor inaccuracies only.</td></tr>
           <tr><td>Satisfactory</td><td>7–9</td><td>Adequate response showing knowledge and understanding. Some development of ideas, though may lack depth. Organization reasonably clear. Some errors in format or minor lapses in tone/style.</td></tr>
           <tr><td>Elementary</td><td>4–6</td><td>Some attempt to respond. Limited content or partially irrelevant ideas. Some organization but inconsistent. Format partly correct. Tone/style occasionally inappropriate.</td></tr>
           <tr><td>Inadequate</td><td>0–3</td><td>Response fails to meet requirements of task. Disorganized or incoherent. Content largely irrelevant or insufficient. Format incorrect or absent. Tone/style unsuitable for purpose.</td></tr>
@@ -54,8 +55,9 @@
     </div>
   </section>
   <section class="page">
-    <aside class="sidebar"><div class="sidebar-inner"><div class="annex">Annexure B</div><h1>Transactional Writing Assessment Rubric</h1></div></aside>
+    <aside class="sidebar"><div class="annex">Annexure B</div><h1>Transactional Writing Assessment Rubric</h1></aside>
     <div class="content">
+      <div class="main-title">Transactional Text Rubric</div>
       <div class="heading"><h2>CRITERIA B: LANGUAGE, STYLE & EDITING</h2><div>10 MARKS</div></div>
       <table>
         <thead><tr><th>Level</th><th>Marks</th><th>Descriptor</th></tr></thead>
@@ -77,7 +79,7 @@
     const element = document.getElementById('rubric');
     const opt = {
       margin: 0,
-      filename: 'Transactional_Writing_Assessment_Rubric.pdf',
+      filename: 'Transactional_Text_Rubric.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2, useCORS: true, scrollX: 0, scrollY: 0 },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
