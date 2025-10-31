@@ -15,16 +15,16 @@
   .btn{border:none;background:#1f7a3b;color:#fff;font-weight:bold;padding:0.6rem 1.2rem;border-radius:8px;cursor:pointer;}
   .btn:hover{opacity:0.9;}
   .spread{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;padding:22px;}
-  .page{display:grid;grid-template-columns:22mm 1fr;width:210mm;min-height:297mm;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
-  .sidebar{background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;}
-  .sidebar-inner{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;}
-  .sidebar h1{font-size:16px;margin:0;font-weight:800;}
-  .sidebar .annex{font-size:12px;}
+  .page{display:grid;grid-template-columns:26mm 1fr;width:210mm;min-height:297mm;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
+  .sidebar{background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;}
+  .sidebar-inner{text-align:center;transform:none;}
+  .sidebar h1{font-size:15px;line-height:1.4;margin:0;font-weight:800;}
+  .sidebar .annex{font-size:11px;margin-bottom:4px;}
   .content{padding:12mm;}
   .heading{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px;}
-  .heading h2{font-size:18px;margin:0;}
-  table{width:100%;border-collapse:collapse;font-size:12px;}
-  th,td{border:1px solid var(--grid);padding:6px 8px;vertical-align:top;}
+  .heading h2{font-size:17px;margin:0;}
+  table{width:100%;border-collapse:separate;border-spacing:0 4px;font-size:12px;line-height:1.4;}
+  th,td{border:1px solid var(--grid);padding:8px 10px;vertical-align:top;word-wrap:break-word;}
   th{background:var(--header);}
   .footer-total{margin-top:10px;font-weight:bold;}
   @page{size:A4;margin:10mm;}
@@ -60,7 +60,7 @@
       <table>
         <thead><tr><th>Level</th><th>Marks</th><th>Descriptor</th></tr></thead>
         <tbody>
-          <tr><td>Outstanding</td><td>9–10</td><td>Excellent tone, register, style, and vocabulary. Language highly appropriate for purpose and audience. Virtually error‑free. Excellent sentence construction. Correct spelling and punctuation.</td></tr>
+          <tr><td>Outstanding</td><td>9–10</td><td>Excellent tone, register, style, and vocabulary. Language highly appropriate for purpose and audience. Virtually error-free. Excellent sentence construction. Correct spelling and punctuation.</td></tr>
           <tr><td>Meritorious</td><td>7–8</td><td>Good tone, style, and vocabulary. Language appropriate for purpose and audience. Few minor errors. Fluent and coherent. Good command of grammar and punctuation.</td></tr>
           <tr><td>Satisfactory</td><td>5–6</td><td>Adequate tone and style, though inconsistent. Reasonable vocabulary and sentence construction. Some grammatical errors but meaning clear. Moderate fluency.</td></tr>
           <tr><td>Elementary</td><td>3–4</td><td>Limited vocabulary. Tone and register often inappropriate. Frequent grammatical and spelling errors. Errors sometimes obscure meaning.</td></tr>
@@ -79,7 +79,7 @@
       margin: 0,
       filename: 'Transactional_Writing_Assessment_Rubric.pdf',
       image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
+      html2canvas: { scale: 2, useCORS: true, scrollX: 0, scrollY: 0 },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
     };
     html2pdf().set(opt).from(element).save();
