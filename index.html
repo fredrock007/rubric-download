@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Transactional Writing Assessment Rubric</title>
+<style>
+  :root{
+    --green:#1f7a3b;
+    --header:#e6e6e6;
+    --grid:#222;
+  }
+  html,body{margin:0;padding:0;background:#f3f3f3;font-family:Arial, Helvetica, sans-serif;}
+  .toolbar{position:sticky;top:0;z-index:10;display:flex;justify-content:center;padding:1rem;background:#fff;border-bottom:1px solid #ccc;}
+  .btn{border:none;background:#1f7a3b;color:#fff;font-weight:bold;padding:0.6rem 1.2rem;border-radius:8px;cursor:pointer;}
+  .btn:hover{opacity:0.9;}
+  .spread{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;padding:22px;}
+  .page{display:grid;grid-template-columns:22mm 1fr;width:210mm;min-height:297mm;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
+  .sidebar{background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;}
+  .sidebar-inner{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;}
+  .sidebar h1{font-size:16px;margin:0;font-weight:800;}
+  .sidebar .annex{font-size:12px;}
+  .content{padding:12mm;}
+  .heading{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px;}
+  .heading h2{font-size:18px;margin:0;}
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  th,td{border:1px solid var(--grid);padding:6px 8px;vertical-align:top;}
+  th{background:var(--header);}
+  .footer-total{margin-top:10px;font-weight:bold;}
+  @page{size:A4;margin:10mm;}
+  @media print{body{background:#fff}.toolbar{display:none}.spread{padding:0}.page{box-shadow:none;border:none;break-after:page}}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <button class="btn" id="downloadBtn">Download PDF</button>
+</div>
+<div class="spread" id="rubric">
+  <section class="page">
+    <aside class="sidebar"><div class="sidebar-inner"><div class="annex">Annexure B</div><h1>Transactional Writing Assessment Rubric</h1></div></aside>
+    <div class="content">
+      <div class="heading"><h2>CRITERIA A: CONTENT, PLANNING & FORMAT</h2><div>15 MARKS</div></div>
+      <table>
+        <thead><tr><th>Level</th><th>Marks</th><th>Descriptor</th></tr></thead>
+        <tbody>
+          <tr><td>Outstanding</td><td>13–15</td><td>Outstanding response. Demonstrates insight, maturity, and creativity. Fully developed and coherent ideas. Excellent organization and structure. Excellent understanding and control of format. Appropriate style and tone maintained throughout. Purpose clearly achieved.</td></tr>
+          <tr><td>Meritorious</td><td>10–12</td><td>Very good response. Clear ideas with good development and structure. Well‑organized and coherent. Format fully correct. Tone and style appropriate to purpose. Minor inaccuracies only.</td></tr>
+          <tr><td>Satisfactory</td><td>7–9</td><td>Adequate response showing knowledge and understanding. Some development of ideas, though may lack depth. Organization reasonably clear. Some errors in format or minor lapses in tone/style.</td></tr>
+          <tr><td>Elementary</td><td>4–6</td><td>Some attempt to respond. Limited content or partially irrelevant ideas. Some organization but inconsistent. Format partly correct. Tone/style occasionally inappropriate.</td></tr>
+          <tr><td>Inadequate</td><td>0–3</td><td>Response fails to meet requirements of task. Disorganized or incoherent. Content largely irrelevant or insufficient. Format incorrect or absent. Tone/style unsuitable for purpose.</td></tr>
+        </tbody>
+      </table>
+      <div class="footer-total">Subtotal (Criteria A): 15</div>
+    </div>
+  </section>
+  <section class="page">
+    <aside class="sidebar"><div class="sidebar-inner"><div class="annex">Annexure B</div><h1>Transactional Writing Assessment Rubric</h1></div></aside>
+    <div class="content">
+      <div class="heading"><h2>CRITERIA B: LANGUAGE, STYLE & EDITING</h2><div>10 MARKS</div></div>
+      <table>
+        <thead><tr><th>Level</th><th>Marks</th><th>Descriptor</th></tr></thead>
+        <tbody>
+          <tr><td>Outstanding</td><td>9–10</td><td>Excellent tone, register, style, and vocabulary. Language highly appropriate for purpose and audience. Virtually error‑free. Excellent sentence construction. Correct spelling and punctuation.</td></tr>
+          <tr><td>Meritorious</td><td>7–8</td><td>Good tone, style, and vocabulary. Language appropriate for purpose and audience. Few minor errors. Fluent and coherent. Good command of grammar and punctuation.</td></tr>
+          <tr><td>Satisfactory</td><td>5–6</td><td>Adequate tone and style, though inconsistent. Reasonable vocabulary and sentence construction. Some grammatical errors but meaning clear. Moderate fluency.</td></tr>
+          <tr><td>Elementary</td><td>3–4</td><td>Limited vocabulary. Tone and register often inappropriate. Frequent grammatical and spelling errors. Errors sometimes obscure meaning.</td></tr>
+          <tr><td>Inadequate</td><td>0–2</td><td>Tone, register, and style completely inappropriate. Vocabulary inadequate. Many serious language errors that obscure meaning.</td></tr>
+        </tbody>
+      </table>
+      <div class="footer-total">Subtotal (Criteria B): 10<br>TOTAL: 25 MARKS (15 + 10)</div>
+    </div>
+  </section>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    const element = document.getElementById('rubric');
+    const opt = {
+      margin: 0,
+      filename: 'Transactional_Writing_Assessment_Rubric.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(element).save();
+  });
+</script>
+</body>
+</html>
